@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Square from './Components/Square.js'
+import Quotes from './Components/Quotes.js'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      {/* The switch component allows us to move from components depending on the path */}
+      <Switch>
+        <Route path="/square" component={Square}/>
+      </Switch>
+      <Switch>
+        <Route path="/quotes" component={Quotes}/>
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
